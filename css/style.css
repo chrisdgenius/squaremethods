@@ -1,37 +1,13 @@
-
-
-
-/* CSS Reset and Font Normalization */
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea, button, select {
+/* CSS Reset */
+body, h1, h2, h3, p, ul, li, form, input, textarea, button, img {
   margin: 0;
   padding: 0;
   border: 0;
+  font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
-  box-sizing: border-box; /* Important for predictable sizing */
+  box-sizing: border-box;
 }
-
-/* Font Size and Family Normalization */
-body {
-  font-size: 16px; /* Or your preferred base font size */
-  font: inherit; /* Let body inherit font settings by default */
-  line-height: 1.5; /* Or your preferred line height */
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 1em; /* Reset to 1em to make them relative */
-  font-weight: normal; /* Or your preferred base font weight */
-}
-
-ul, ol {
-  list-style: none; /* Remove default list styles */
-}
-
-img {
-  border: 0; /* Remove default image borders */
-  max-width: 100%; /* Make images responsive */
-  height: auto;
-}
-
 
 /* General Styles */
 :root {
