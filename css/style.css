@@ -13,8 +13,8 @@ body, h1, h2, h3, p, ul, li, form, input, textarea, button, img {
 :root {
   --primary-color: #007bff;
   --secondary-color: #28a745;
-  --hero-text-color: #fff;  /*  White for Hero Section Text */
-  --body-text-color: #555555; /*  Grey for General Body Text */
+  --hero-text-color: #fff;
+  --body-text-color: #555;
   --background-color: #f8f9fa;
   --font-family: sans-serif;
 }
@@ -22,7 +22,7 @@ body, h1, h2, h3, p, ul, li, form, input, textarea, button, img {
 body {
   font-family: var(--font-family);
   background-color: var(--background-color);
-  color: var(--body-text-color); /* Using general body text color */
+  color: var(--body-text-color);
   line-height: 1.6;
 }
 
@@ -61,7 +61,7 @@ a:hover {
 
 /* Header */
 header {
-  background-color: rgba(255, 255, 255, 0.9); /*  Slightly transparent header */
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -97,12 +97,13 @@ header nav ul li {
 
 /* Hero Section */
 #hero {
+    background-image: url('images/hero-image.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 200px 0;
     text-align: center;
-    color: var(--hero-text-color); /* Set text color to white */
+    color: var(--hero-text-color);
     position: relative;
     overflow: hidden;
     animation: zoomIn 15s linear infinite;
@@ -115,7 +116,7 @@ header nav ul li {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
@@ -124,24 +125,22 @@ header nav ul li {
     z-index: 2;
 }
 
-#hero h1, #hero p { /* Targeting h1 and p inside hero section for white color */
+#hero h1, #hero p {
     color: var(--hero-text-color);
 }
-
 
 @keyframes zoomIn {
     0% {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.2); /* Adjust the zoom level */
+        transform: scale(1.2);
     }
     100% {
         transform: scale(1);
     }
 }
 
-/* Work Process Section */
 /* Work Process Section */
 #work-process {
     padding: 60px 0;
@@ -153,20 +152,19 @@ header nav ul li {
     color: var(--body-text-color);
 }
 
-#work-process .service-grid { /* Using service-grid for layout */
+#work-process .service-grid { /* Reusing service-grid for layout */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-#work-process .service-item { /* Using service-item for consistent styling */
+#work-process .service-item { /* Reusing service-item for consistent styling */
     background-color: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* Needed for absolute positioning of step number */
 }
 
 #work-process .service-item:hover {
@@ -175,33 +173,16 @@ header nav ul li {
 }
 
 #work-process .service-item img {
-    width: 120px; /* Fixed width */
-    height: 120px; /* Fixed height */
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    object-fit: cover; /* Ensures image fills the space without distortion */
+    object-fit: cover;
     margin-bottom: 15px;
 }
 
 #work-process .service-item h3,
 #work-process .service-item p {
     color: var(--body-text-color);
-}
-
-.step-number {
-    position: absolute;
-    top: -10px; /* Adjust as needed */
-    left: -10px; /* Adjust as needed */
-    background-color: var(--primary-color);
-    color: white;
-    width: 30px; /* Adjust as needed */
-    height: 30px; /* Adjust as needed */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 14px; /* Adjust as needed */
-    border: 2px solid white; /* Add a white border */
 }
 
 /* Services Section */
@@ -212,7 +193,7 @@ header nav ul li {
 #services h2 {
   text-align: center;
   margin-bottom: 40px;
-    color: var(--body-text-color); /*  Setting to body text color */
+    color: var(--body-text-color);
 }
 
 .service-grid {
@@ -242,9 +223,8 @@ header nav ul li {
 
 .service-item h3,
 .service-item p{
-    color: var(--body-text-color);  /*  Setting to body text color */
+    color: var(--body-text-color);
 }
-
 
 /* About Section */
 #about {
@@ -255,13 +235,12 @@ header nav ul li {
 #about h2 {
   text-align: center;
   margin-bottom: 20px;
-    color: var(--body-text-color); /*  Setting to body text color */
+    color: var(--body-text-color);
 }
 
 #about p {
-    color: var(--body-text-color); /*  Setting to body text color */
+    color: var(--body-text-color);
 }
-
 
 #about img {
     border-radius: 10px;
@@ -276,13 +255,13 @@ header nav ul li {
 #blog-posts h2 {
     text-align: center;
     margin-bottom: 40px;
-    color: var(--body-text-color); /*  Setting to body text color */
+    color: var(--body-text-color);
 }
 
 /* Reusing case-study grid for blog post layout */
 #blog-posts .case-study-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /*  Adjust width */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
 
@@ -295,15 +274,15 @@ header nav ul li {
 
 #blog-posts .case-study-item img {
     width: 100%;
-    height: 200px;  /*  Fixed height for consistency */
-    object-fit: cover;  /*  Crop images to fit */
+    height: 200px;
+    object-fit: cover;
     border-radius: 5px;
     margin-bottom: 15px;
 }
 
 #blog-posts .case-study-item h3,
 #blog-posts .case-study-item p {
-    color: var(--body-text-color);  /*  Setting to body text color */
+    color: var(--body-text-color);
 }
 
 /* Contact Section */
@@ -314,7 +293,7 @@ header nav ul li {
 #contact h2 {
   text-align: center;
   margin-bottom: 30px;
-    color: var(--body-text-color); /*  Setting to body text color */
+    color: var(--body-text-color);
 }
 
 #contact-form {
@@ -330,7 +309,7 @@ header nav ul li {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
-      color: var(--body-text-color); /*  Setting to body text color */
+      color: var(--body-text-color);
 }
 
 .form-group input,
@@ -340,7 +319,7 @@ header nav ul li {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-family: var(--font-family);
-    color: var(--body-text-color); /*  Setting to body text color */
+    color: var(--body-text-color);
 }
 
 /* Footer */
@@ -395,10 +374,10 @@ footer {
   }
 
   .work-process-grid {
-    grid-template-columns: 1fr;  /* Stack items on smaller screens */
+    grid-template-columns: 1fr;
   }
 
   #blog-posts .case-study-grid {
-      grid-template-columns: 1fr; /* Stack items on smaller screens */
+      grid-template-columns: 1fr;
   }
 }
