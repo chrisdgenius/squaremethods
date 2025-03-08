@@ -22,6 +22,7 @@ body {
     background-color: var(--background-color);
     color: var(--body-text-color);
     line-height: 1.6;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
 .container {
@@ -238,6 +239,13 @@ h3 {
     font-weight: bold; /* Add bold font */
 }
 
+#work-process .service-item h3 a,
+#services .service-item h3 a,
+#blog-posts .case-study-item h3 a {
+    color: var(--body-text-color);
+    text-decoration: none; /* Remove underline from links */
+}
+
 /* Style image container*/
 .image-container {
     position: relative;
@@ -248,7 +256,7 @@ h3 {
 
 /* Position number, use oval style */
 .step-number {
-position: absolute;
+    position: absolute;
     top: 5px; /* Adjust as needed */
     left: 5px; /* Adjust as needed */
     background-color: var(--primary-color);
@@ -283,50 +291,45 @@ position: absolute;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Services Section */
-#services {
+/* Style for the detailed sections */
+.detail-section {
     padding: 60px 0;
-    background-color: #e9ecef;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
 }
 
-#services h2 {
+.detail-section h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     color: var(--body-text-color);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+#services .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
 }
 
 #services .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    justify-items: center;  /* Center items horizontally within the grid column */
+    justify-items: center;
 }
 
 #services .service-item {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
     background-color: #f0f0f0;
     border-radius: 5px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    display: flex;  /* Enable Flexbox */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
 }
 
-/*Ensures that icon is correct color with good spacing*/
-#services .service-item i {
-   margin-bottom: 15px;
-     color: var(--primary-color);  /* Ensure they get the right color */
-    display: block; /* To apply margin properly */
-}
-
-#services .service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
 /* About Section */
 #about {
     padding: 60px 0;
