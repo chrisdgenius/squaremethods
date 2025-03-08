@@ -86,12 +86,12 @@ header .logo img {
     height: 50px;
     vertical-align: middle;
     margin-right: 10px;
-    opacity: 0.7;  /* Making the logo slightly transparent */
-    transition: opacity 0.3s ease;  /* Adding smooth transition */
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
 }
 
 header .logo img:hover {
-    opacity: 1;  /* Make the logo fully opaque on hover */
+    opacity: 1;
 }
 
 /* Header info */
@@ -199,11 +199,12 @@ header nav ul li {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    overflow: hidden; /*  Hide the parts that go outside */
 }
 
 #work-process .service-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /*Stronger hover shadow*/
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Make Hovers Obvious - Example of one method*/
@@ -212,13 +213,19 @@ header nav ul li {
    transition: transform 0.3s ease-in-out
 }
 
-#work-process .service-item h3,  /* Titles on top of image */
+#work-process .service-item h3,
 #services .service-item h3,
 #blog-posts .case-study-item h3{
     order: 1;
     margin-bottom: 10px;
     color: var(--body-text-color);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* New image container, helps with positioning the number */
+.image-container {
+    position: relative;
+    display: inline-block; /* Ensure it wraps the image */
 }
 
 #work-process .service-item img, /* Images Below */
@@ -230,6 +237,14 @@ header nav ul li {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);  /* Add a subtle shadow behind the images */
+    border: 2px solid white;  /* Add a white border */
+}
+
+/* Style the image container on hover */
+#work-process .service-item:hover .image-container img {
+    border-color: var(--primary-color);  /* Change border color to primary on hover */
+    transform: scale(1.1);  /* Enlarge the image slightly */
 }
 
 #work-process .service-item p, /* Paragraphs below */
@@ -262,6 +277,46 @@ header nav ul li {
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+}
+
+/* Site Logo and style the header area, make sticky */
+/* Style the circle surrounding text */
+.circle {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background: #495057;
+    text-align: center;
+    line-height: 1.65;
+    vertical-align: middle;
+    margin: 0px 20px 15px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* New style the header text*/
+.header-area .main-header .navbar-default .navbar-brand-area h1 {
+    font-family: Roboto, sans-serif;
+    font-size: 45px;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* Position the image correctly and the oval number*/
+.step-number {
+position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Services Section */
@@ -360,7 +415,6 @@ header nav ul li {
       transform: scale(1.02); /* Slight zoom on hover */
     transition: transform 0.3s ease;
 }
-
 
 #blog-posts .case-study-item img {
     width: 100%;
