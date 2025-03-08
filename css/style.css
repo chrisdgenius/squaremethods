@@ -13,9 +13,10 @@ body, h1, h2, h3, p, ul, li, form, input, textarea, button, img {
 :root {
   --primary-color: #007bff;
   --secondary-color: #28a745;
-  --text-color: #fff;  /* Changed text color to white for better contrast */
+  --hero-text-color: #fff;  /*  White for Hero Section Text */
+  --body-text-color: #555; /*  Grey for General Body Text */
   --background-color: #f8f9fa;
-  --body-text-color: #333; /*  Added a variable for general body text */
+  --font-family: sans-serif;
 }
 
 body {
@@ -101,7 +102,7 @@ header nav ul li {
     background-repeat: no-repeat;
     padding: 200px 0;
     text-align: center;
-    color: var(--text-color); /* Set text color to white */
+    color: var(--hero-text-color); /* Set text color to white */
     position: relative;
     overflow: hidden;
     animation: zoomIn 15s linear infinite;
@@ -124,7 +125,7 @@ header nav ul li {
 }
 
 #hero h1, #hero p { /* Targeting h1 and p inside hero section for white color */
-    color: var(--text-color);
+    color: var(--hero-text-color);
 }
 
 
