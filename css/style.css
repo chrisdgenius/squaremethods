@@ -142,6 +142,7 @@ header nav ul li {
 }
 
 /* Work Process Section */
+/* Work Process Section */
 #work-process {
     padding: 60px 0;
 }
@@ -174,10 +175,10 @@ header nav ul li {
 }
 
 #work-process .service-item img {
-    width: 100px; /* Adjust as needed */
-    height: 100px;
+    width: 120px; /* Fixed width */
+    height: 120px; /* Fixed height */
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: cover; /* Ensures image fills the space without distortion */
     margin-bottom: 15px;
 }
 
