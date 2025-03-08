@@ -1,19 +1,19 @@
-/* CSS Reset (Optional - but recommended) */
+/* CSS Reset */
 body, h1, h2, h3, p, ul, li, form, input, textarea, button, img {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 /* General Styles */
 :root {
   --primary-color: #007bff;
   --secondary-color: #28a745;
-  --text-color: #333;
+  --text-color: #fff;  /* Changed text color to white for better contrast */
   --background-color: #f8f9fa;
   --font-family: sans-serif;
 }
@@ -60,7 +60,7 @@ a:hover {
 
 /* Header */
 header {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9); /*  Slightly transparent header */
   padding: 20px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -80,9 +80,9 @@ header .logo {
 }
 
 header .logo img {
-    height: 50px; /* Adjust the logo height as needed */
-    vertical-align: middle; /* Align the image vertically */
-    margin-right: 10px; /* Add some spacing between the logo and text, if any */
+  height: 50px;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 header nav ul {
@@ -96,41 +96,101 @@ header nav ul li {
 
 /* Hero Section */
 #hero {
-    background-color: var(--background-color);
-    padding: 100px 0;
-    overflow: hidden; /*  To contain floated elements or absolutely positioned elements */
+    background-image: url('images/hero-image.jpg');  /* Set the background image */
+    background-size: cover;  /* Cover the entire section */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 200px 0; /* Adjust padding as needed */
+    text-align: center;
+    color: var(--text-color); /* Set text color to white or a light color */
+    position: relative;
+    overflow: hidden;  /*  Important to hide the scaling overflow */
+    animation: zoomIn 15s linear infinite; /* Zoom animation */
 }
 
-.hero-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.hero-image {
-    width: 50%; /* Adjust as needed */
-    text-align: center; /* Center the image */
-}
-
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);  /* Dark overlay for better text readability */
+    z-index: 1;
 }
 
 .hero-content {
-    width: 50%; /* Adjust as needed */
-    text-align: left;
+    position: relative;
+    z-index: 2;  /*  Ensure the text is above the overlay */
 }
 
 #hero h1 {
   font-size: 3em;
   margin-bottom: 20px;
 }
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /*  Adjust the zoom level */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* What We Do Section */
+#what-we-do {
+    padding: 60px 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+#what-we-do h2 {
+    margin-bottom: 20px;
+}
+
+#what-we-do h3 {
+    margin-bottom: 10px;
+}
+
+/* Work Process Section */
+#work-process {
+    padding: 60px 0;
+}
+
+#work-process h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.work-process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.work-process-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-process-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.work-process-item i {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
 
 /* Services Section */
 #services {
@@ -183,9 +243,70 @@ header nav ul li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Case Studies Section */
+#case-studies {
+    padding: 60px 0;
+}
+
+#case-studies h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.case-study-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.case-study-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Testimonials Section */
+#testimonials {
+    padding: 60px 0;
+    background-color: #f0f0f0;
+}
+
+#testimonials h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonial-author {
+    font-style: italic;
+    margin-top: 10px;
+    color: #777;
+}
+
 /* Contact Section */
 #contact {
-  padding: 60px 0;
+    padding: 60px 0;
 }
 
 #contact h2 {
@@ -264,17 +385,16 @@ footer {
     margin-bottom: 10px;
   }
 
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-image, .hero-content {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
   #hero h1 {
     font-size: 2.5em;
   }
+
+  .work-process-grid {
+    grid-template-columns: 1fr;  /* Stack items on smaller screens */
+  }
+
+    .case-study-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr; /* Stack items */
+    }
 }
