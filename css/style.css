@@ -1,32 +1,10 @@
 /* CSS Reset */
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea, button, select {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-  box-sizing: border-box; /* Important for predictable sizing */
-}
-
-/* Font Size and Family Normalization */
-body {
-  font-size: 16px; /* Or your preferred base font size */
-  font: inherit; /* Let body inherit font settings by default */
-  line-height: 1.5; /* Or your preferred line height */
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 1em; /* Reset to 1em to make them relative */
-  font-weight: normal; /* Or your preferred base font weight */
-}
-
-ul, ol {
-  list-style: none; /* Remove default list styles */
-}
-
-img {
-  border: 0; /* Remove default image borders */
-  max-width: 100%; /* Make images responsive */
-  height: auto;
+body, h1, h2, h3, h4, h5, h6, p, ul, li, form, input, textarea, button, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    box-sizing: border-box;
 }
 
 /* General Styles */
@@ -293,6 +271,8 @@ position: absolute;
     margin-bottom: 15px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
     border: 2px solid white;
+            color: var(--primary-color);  /* Ensures font-awesome colors appear! */
+
 }
 
 #work-process .service-item p,
@@ -303,28 +283,34 @@ position: absolute;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-#services .service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s ease;
-}
-
+/* The important part */
 #services .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
     gap: 30px;
-    justify-items: center;
+    justify-items: center;  /* Horizontal centering */
 }
 
 #services .service-item {
-    display: grid;
-    grid-template-rows: auto auto 1fr;
     background-color: #f0f0f0;
     border-radius: 5px;
     padding: 20px;
-    text-align: center;
+    text-align: center; /* center text */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+
+/*Ensures that icon is correct color with good spacing*/
+#services .service-item i {
+   margin-bottom: 15px;
+     color: var(--primary-color);  /* Ensure they get the right color */
+    display: block; /* To apply margin properly */
+}
+
+#services .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* About Section */
