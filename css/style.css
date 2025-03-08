@@ -31,13 +31,15 @@ img {
   max-width: 100%; /* Make images responsive */
   height: auto;
 }
+
+
 /* General Styles */
 :root {
   --primary-color: #007bff;
   --secondary-color: #28a745;
   --hero-text-color: #fff;
-  --body-text-color: #333; /* Darker body text */
-  --background-color: #f0f0f0; /* Lighter background for contrast */
+  --body-text-color: #333;
+  --background-color: #f0f0f0;
   --font-family: sans-serif;
 }
 
@@ -74,20 +76,20 @@ a:hover {
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .button:hover {
   background-color: var(--secondary-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increased shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
 
 /* Header */
 header {
-  background-color: #fff;  /* Solid white background */
+  background-color: #fff;
   padding: 20px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -105,9 +107,15 @@ header .logo {
 }
 
 header .logo img {
-  height: 50px;
-  vertical-align: middle;
-  margin-right: 10px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+    opacity: 0.7;  /* Making the logo slightly transparent */
+    transition: opacity 0.3s ease;  /* Adding smooth transition */
+}
+
+header .logo img:hover {
+    opacity: 1;  /* Make the logo fully opaque on hover */
 }
 
 /* Header info */
@@ -147,7 +155,7 @@ header nav ul li {
     color: var(--hero-text-color);
     position: relative;
     overflow: hidden;
-    animation: zoomIn 15s linear infinite, fadeIn 2s ease-in-out; /* Added fade-in */
+    animation: zoomIn 15s linear infinite, fadeIn 2s ease-in-out;
 }
 
 #hero::before {
@@ -157,14 +165,14 @@ header nav ul li {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #hero h1, #hero p {
@@ -191,14 +199,14 @@ header nav ul li {
 /* Work Process Section */
 #work-process {
     padding: 60px 0;
-    background-color: #fff; /* Solid background */
+    background-color: #fff;
 }
 
 #work-process h2 {
     text-align: center;
     margin-bottom: 40px;
     color: var(--body-text-color);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 #work-process .service-grid { /* Reusing service-grid for layout */
@@ -208,118 +216,125 @@ header nav ul li {
 }
 
 #work-process .service-item { /* Reusing service-item for consistent styling */
-    background-color: #f9f9f9; /* Slightly darker card background */
+    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Stronger card shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #eee; /* Subtle border */
+    position: relative;
 }
 
 #work-process .service-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger hover shadow */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /*Stronger hover shadow*/
 }
 
-#work-process .service-item img {
-    width: 80px;  /* Increased image size */
-    height: 80px; /* Increased image size */
+/* Make Hovers Obvious - Example of one method*/
+#work-process .service-item:hover img {
+   transform: scale(1.1);
+   transition: transform 0.3s ease-in-out
+}
+
+#work-process .service-item h3,  /* Titles on top of image */
+#services .service-item h3,
+#blog-posts .case-study-item h3{
+    order: 1;
+    margin-bottom: 10px;
+    color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#work-process .service-item img, /* Images Below */
+#services .service-item i,
+#blog-posts .case-study-item img{
+    order: 2;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 2px solid #fff; /* White border around images */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#work-process .service-item h3,
-#work-process .service-item p {
+#work-process .service-item p, /* Paragraphs below */
+#services .service-item p,
+#blog-posts .case-study-item p {
+    order: 3;
     color: var(--body-text-color);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#services .service-item:hover {
+    transform: translateY(-5px); /* Slide up slightly */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Add more shadow */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+#services .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center; /* center items */
+}
+
+#services .service-item {
+    display: grid;
+    grid-template-rows: auto auto 1fr; /*Distribute available space*/
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 /* Services Section */
 #services {
   padding: 60px 0;
-    background-color: #e9ecef; /* Darker background */
+    background-color: #e9ecef;
 }
 
 #services h2 {
   text-align: center;
   margin-bottom: 40px;
     color: var(--body-text-color);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.service-item {
-  background-color: #fff; /* Solid white background */
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Stronger shadow */
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #ddd; /* Subtle border */
-}
-
-.service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger hover shadow */
-}
-
-.service-item i {
-  margin-bottom: 15px;
-  color: var(--primary-color);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow on icons */
-}
-
-.service-item h3,
-.service-item p{
-    color: var(--body-text-color);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* About Section */
 #about {
   padding: 60px 0;
-  background-color: #fff;  /* Solid white background */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Add transition for smooth hover effect */
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #about:hover {
-    transform: translateY(-5px);  /* Move the section slightly upwards on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Increase the shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-
 
 #about h2 {
   text-align: center;
   margin-bottom: 20px;
     color: var(--body-text-color);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 #about p {
     color: var(--body-text-color);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 #about img {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;  /* Add a transition for smooth zoom effect */
+    transition: transform 0.3s ease;
 }
 
 #about img:hover {
-    transform: scale(1.05);  /* Zoom in slightly on hover */
+    transform: scale(1.05);
 }
-
 
 /* Blog Posts Section */
 #blog-posts {
@@ -330,7 +345,7 @@ header nav ul li {
     text-align: center;
     margin-bottom: 40px;
     color: var(--body-text-color);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Reusing case-study grid for blog post layout */
@@ -341,16 +356,33 @@ header nav ul li {
 }
 
 #blog-posts .case-study-item {
-    background-color: #f9f9f9; /* Slightly darker card background */
+    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Stronger shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Add transition for smooth hover effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    grid-template-rows: auto auto 1fr; /* Ensure each item takes equal vertical space */
 }
 
 #blog-posts .case-study-item:hover {
-    transform: translateY(-5px);  /* Move the card slightly upwards on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  /* Increase the shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Paragraph/text for the blog*/
+#blog-posts .case-study-item p {
+        overflow: hidden; /* Hide any content */
+    text-overflow: ellipsis; /* add ... to the end of paragraphs */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+/* Hover effects for the entire card*/
+#blog-posts .case-study-item:hover {
+      transform: scale(1.02); /* Slight zoom on hover */
+    transition: transform 0.3s ease;
 }
 
 
@@ -365,20 +397,20 @@ header nav ul li {
 #blog-posts .case-study-item h3,
 #blog-posts .case-study-item p {
     color: var(--body-text-color);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Section */
 #contact {
     padding: 60px 0;
-    background-color: #f0f0f0;  /* Solid background */
+    background-color: #f0f0f0;
 }
 
 #contact h2 {
   text-align: center;
   margin-bottom: 30px;
     color: var(--body-text-color);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 #contact-form {
@@ -395,7 +427,7 @@ header nav ul li {
   font-weight: bold;
   margin-bottom: 5px;
       color: var(--body-text-color);
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .form-group input,
