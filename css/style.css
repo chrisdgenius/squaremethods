@@ -14,8 +14,8 @@ body, h1, h2, h3, p, ul, li, form, input, textarea, button, img {
   --primary-color: #007bff;
   --secondary-color: #28a745;
   --hero-text-color: #fff;
-  --body-text-color: #555;
-  --background-color: #f8f9fa;
+  --body-text-color: #333; /* Darker body text */
+  --background-color: #f0f0f0; /* Lighter background for contrast */
   --font-family: sans-serif;
 }
 
@@ -52,18 +52,20 @@ a:hover {
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
 .button:hover {
   background-color: var(--secondary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increased shadow */
   text-decoration: none;
 }
 
 /* Header */
 header {
-  
+  background-color: #fff;  /* Solid white background */
   padding: 20px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Stronger shadow */
   position: sticky;
   top: 0;
   z-index: 100;
@@ -86,6 +88,23 @@ header .logo img {
   margin-right: 10px;
 }
 
+/* Header info */
+.header-info {
+    display: flex;
+    align-items: center;
+}
+
+.header-info .phone-number {
+    margin-right: 20px;
+    font-weight: bold;
+    color: var(--body-text-color);
+    transition: color 0.3s ease;
+}
+
+.header-info .phone-number:hover {
+    color: var(--primary-color);
+}
+
 header nav ul {
   list-style: none;
   display: flex;
@@ -106,7 +125,7 @@ header nav ul li {
     color: var(--hero-text-color);
     position: relative;
     overflow: hidden;
-    animation: zoomIn 15s linear infinite;
+    animation: zoomIn 15s linear infinite, fadeIn 2s ease-in-out; /* Added fade-in */
 }
 
 #hero::before {
@@ -116,13 +135,14 @@ header nav ul li {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
 }
 
 #hero h1, #hero p {
@@ -141,15 +161,22 @@ header nav ul li {
     }
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 /* Work Process Section */
 #work-process {
     padding: 60px 0;
+    background-color: #fff; /* Solid background */
 }
 
 #work-process h2 {
     text-align: center;
     margin-bottom: 40px;
     color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
 }
 
 #work-process .service-grid { /* Reusing service-grid for layout */
@@ -159,41 +186,47 @@ header nav ul li {
 }
 
 #work-process .service-item { /* Reusing service-item for consistent styling */
-    background-color: white;
+    background-color: #f9f9f9; /* Slightly darker card background */
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Stronger card shadow */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee; /* Subtle border */
 }
 
 #work-process .service-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger hover shadow */
 }
 
 #work-process .service-item img {
-    width: 50px;
-    height: 50px;
+    width: 80px;  /* Increased image size */
+    height: 80px; /* Increased image size */
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
+    border: 2px solid #fff; /* White border around images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #work-process .service-item h3,
 #work-process .service-item p {
     color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
 }
 
 /* Services Section */
 #services {
   padding: 60px 0;
+    background-color: #e9ecef; /* Darker background */
 }
 
 #services h2 {
   text-align: center;
   margin-bottom: 40px;
     color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
 }
 
 .service-grid {
@@ -203,49 +236,68 @@ header nav ul li {
 }
 
 .service-item {
-  background-color: white;
+  background-color: #fff; /* Solid white background */
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Stronger shadow */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ddd; /* Subtle border */
 }
 
 .service-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger hover shadow */
 }
 
 .service-item i {
   margin-bottom: 15px;
   color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow on icons */
 }
 
 .service-item h3,
 .service-item p{
     color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
 }
 
 /* About Section */
 #about {
   padding: 60px 0;
-  background-color: #f0f0f0;
+  background-color: #fff;  /* Solid white background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Add transition for smooth hover effect */
 }
+
+#about:hover {
+    transform: translateY(-5px);  /* Move the section slightly upwards on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Increase the shadow on hover */
+}
+
 
 #about h2 {
   text-align: center;
   margin-bottom: 20px;
     color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
 }
 
 #about p {
     color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
 }
 
 #about img {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;  /* Add a transition for smooth zoom effect */
 }
+
+#about img:hover {
+    transform: scale(1.05);  /* Zoom in slightly on hover */
+}
+
 
 /* Blog Posts Section */
 #blog-posts {
@@ -256,6 +308,7 @@ header nav ul li {
     text-align: center;
     margin-bottom: 40px;
     color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
 }
 
 /* Reusing case-study grid for blog post layout */
@@ -266,11 +319,18 @@ header nav ul li {
 }
 
 #blog-posts .case-study-item {
-    background-color: white;
+    background-color: #f9f9f9; /* Slightly darker card background */
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Add transition for smooth hover effect */
 }
+
+#blog-posts .case-study-item:hover {
+    transform: translateY(-5px);  /* Move the card slightly upwards on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  /* Increase the shadow on hover */
+}
+
 
 #blog-posts .case-study-item img {
     width: 100%;
@@ -283,17 +343,20 @@ header nav ul li {
 #blog-posts .case-study-item h3,
 #blog-posts .case-study-item p {
     color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
 }
 
 /* Contact Section */
 #contact {
     padding: 60px 0;
+    background-color: #f0f0f0;  /* Solid background */
 }
 
 #contact h2 {
   text-align: center;
   margin-bottom: 30px;
     color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
 }
 
 #contact-form {
@@ -310,6 +373,7 @@ header nav ul li {
   font-weight: bold;
   margin-bottom: 5px;
       color: var(--body-text-color);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
 }
 
 .form-group input,
