@@ -277,6 +277,7 @@ header nav ul li {
 
 
 #about h2 {
+  font-weight: 700;
   text-align: center;
   margin-bottom: 20px;
     color: var(--body-text-color);
@@ -291,6 +292,7 @@ header nav ul li {
 #about img {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   align-items: center;
     transition: transform 0.3s ease;  /* Add a transition for smooth zoom effect */
 }
 
