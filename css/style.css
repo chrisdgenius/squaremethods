@@ -15,13 +15,13 @@ body, h1, h2, h3, p, ul, li, form, input, textarea, button, img {
   --secondary-color: #28a745;
   --text-color: #fff;  /* Changed text color to white for better contrast */
   --background-color: #f8f9fa;
-  --font-family: sans-serif;
+  --body-text-color: #333; /*  Added a variable for general body text */
 }
 
 body {
   font-family: var(--font-family);
   background-color: var(--background-color);
-  color: var(--text-color);
+  color: var(--body-text-color); /* Using general body text color */
   line-height: 1.6;
 }
 
@@ -96,16 +96,15 @@ header nav ul li {
 
 /* Hero Section */
 #hero {
-    background-image: url('images/hero-image.jpg');  /* Set the background image */
-    background-size: cover;  /* Cover the entire section */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 200px 0; /* Adjust padding as needed */
+    padding: 200px 0;
     text-align: center;
-    color: var(--text-color); /* Set text color to white or a light color */
+    color: var(--text-color); /* Set text color to white */
     position: relative;
-    overflow: hidden;  /*  Important to hide the scaling overflow */
-    animation: zoomIn 15s linear infinite; /* Zoom animation */
+    overflow: hidden;
+    animation: zoomIn 15s linear infinite;
 }
 
 #hero::before {
@@ -115,26 +114,26 @@ header nav ul li {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);  /* Dark overlay for better text readability */
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;  /*  Ensure the text is above the overlay */
+    z-index: 2;
 }
 
-#hero h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
+#hero h1, #hero p { /* Targeting h1 and p inside hero section for white color */
+    color: var(--text-color);
 }
+
 
 @keyframes zoomIn {
     0% {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.2); /*  Adjust the zoom level */
+        transform: scale(1.2); /* Adjust the zoom level */
     }
     100% {
         transform: scale(1);
@@ -149,9 +148,10 @@ header nav ul li {
 #work-process h2 {
     text-align: center;
     margin-bottom: 40px;
+    color: var(--body-text-color); /*  Setting to body text color */
 }
 
-#work-process .service-grid { /*  Using service-grid for layout */
+#work-process .service-grid { /* Using service-grid for layout */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
@@ -179,6 +179,11 @@ header nav ul li {
     margin-bottom: 15px;
 }
 
+#work-process .service-item h3,
+#work-process .service-item p {
+    color: var(--body-text-color);  /*  Setting to body text color */
+}
+
 /* Services Section */
 #services {
   padding: 60px 0;
@@ -187,6 +192,7 @@ header nav ul li {
 #services h2 {
   text-align: center;
   margin-bottom: 40px;
+    color: var(--body-text-color); /*  Setting to body text color */
 }
 
 .service-grid {
@@ -214,6 +220,12 @@ header nav ul li {
   color: var(--primary-color);
 }
 
+.service-item h3,
+.service-item p{
+    color: var(--body-text-color);  /*  Setting to body text color */
+}
+
+
 /* About Section */
 #about {
   padding: 60px 0;
@@ -223,7 +235,13 @@ header nav ul li {
 #about h2 {
   text-align: center;
   margin-bottom: 20px;
+    color: var(--body-text-color); /*  Setting to body text color */
 }
+
+#about p {
+    color: var(--body-text-color); /*  Setting to body text color */
+}
+
 
 #about img {
     border-radius: 10px;
@@ -238,6 +256,7 @@ header nav ul li {
 #blog-posts h2 {
     text-align: center;
     margin-bottom: 40px;
+    color: var(--body-text-color); /*  Setting to body text color */
 }
 
 /* Reusing case-study grid for blog post layout */
@@ -262,6 +281,11 @@ header nav ul li {
     margin-bottom: 15px;
 }
 
+#blog-posts .case-study-item h3,
+#blog-posts .case-study-item p {
+    color: var(--body-text-color);  /*  Setting to body text color */
+}
+
 /* Contact Section */
 #contact {
     padding: 60px 0;
@@ -270,6 +294,7 @@ header nav ul li {
 #contact h2 {
   text-align: center;
   margin-bottom: 30px;
+    color: var(--body-text-color); /*  Setting to body text color */
 }
 
 #contact-form {
@@ -285,6 +310,7 @@ header nav ul li {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
+      color: var(--body-text-color); /*  Setting to body text color */
 }
 
 .form-group input,
@@ -294,6 +320,7 @@ header nav ul li {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-family: var(--font-family);
+    color: var(--body-text-color); /*  Setting to body text color */
 }
 
 /* Footer */
