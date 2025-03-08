@@ -149,7 +149,7 @@ header nav ul li {
 #work-process h2 {
     text-align: center;
     margin-bottom: 40px;
-    color: var(--body-text-color); /*  Setting to body text color */
+    color: var(--body-text-color);
 }
 
 #work-process .service-grid { /* Using service-grid for layout */
@@ -165,6 +165,7 @@ header nav ul li {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Needed for absolute positioning of step number */
 }
 
 #work-process .service-item:hover {
@@ -182,7 +183,24 @@ header nav ul li {
 
 #work-process .service-item h3,
 #work-process .service-item p {
-    color: var(--body-text-color);  /*  Setting to body text color */
+    color: var(--body-text-color);
+}
+
+.step-number {
+    position: absolute;
+    top: -10px; /* Adjust as needed */
+    left: -10px; /* Adjust as needed */
+    background-color: var(--primary-color);
+    color: white;
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px; /* Adjust as needed */
+    border: 2px solid white; /* Add a white border */
 }
 
 /* Services Section */
