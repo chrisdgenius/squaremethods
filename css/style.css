@@ -1,97 +1,97 @@
 /* CSS Reset */
 body, h1, h2, h3, p, ul, li, form, input, textarea, button, img {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 /* General Styles */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #28a745;
-    --hero-text-color: #fff;
-    --body-text-color: #333;
-    --background-color: #f0f0f0;
-    --font-family: sans-serif;
+  --primary-color: #007bff;
+  --secondary-color: #28a745;
+  --hero-text-color: #fff;
+  --body-text-color: #333;
+  --background-color: #f0f0f0;
+  --font-family: sans-serif;
 }
 
 body {
-    font-family: var(--font-family);
-    background-color: var(--background-color);
-    color: var(--body-text-color);
-    line-height: 1.6;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--body-text-color);
+  line-height: 1.6;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
+  color: var(--secondary-color);
+  text-decoration: underline;
 }
 
 .button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .button:hover {
-    background-color: var(--secondary-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
 }
 
 /* Header */
 header {
-    background-color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  background-color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 header .logo img {
     height: 50px;
     vertical-align: middle;
     margin-right: 10px;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    opacity: 0.7;  /* Making the logo slightly transparent */
+    transition: opacity 0.3s ease;  /* Adding smooth transition */
 }
 
 header .logo img:hover {
-    opacity: 1;
+    opacity: 1;  /* Make the logo fully opaque on hover */
 }
 
 /* Header info */
@@ -112,12 +112,12 @@ header .logo img:hover {
 }
 
 header nav ul {
-    list-style: none;
-    display: flex;
+  list-style: none;
+  display: flex;
 }
 
 header nav ul li {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 /* Hero Section */
@@ -159,34 +159,17 @@ header nav ul li {
     0% {
         transform: scale(1);
     }
-
     50% {
         transform: scale(1.2);
     }
-
     100% {
         transform: scale(1);
     }
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/* general titles on all section items*/
-h3 {
-    font-weight: bold;
-}
-
-.section-head {
-    font-size: 2em;
-    font-weight: bold;
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 /* Work Process Section */
@@ -216,38 +199,279 @@ h3 {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    overflow: hidden;
 }
 
 #work-process .service-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /*Stronger hover shadow*/
 }
 
 /* Make Hovers Obvious - Example of one method*/
 #work-process .service-item:hover img {
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out
+   transform: scale(1.1);
+   transition: transform 0.3s ease-in-out
 }
 
-#work-process .service-item h3,
+#work-process .service-item h3,  /* Titles on top of image */
 #services .service-item h3,
-#blog-posts .case-study-item h3 {
+#blog-posts .case-study-item h3{
     order: 1;
     margin-bottom: 10px;
     color: var(--body-text-color);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    font-weight: bold; /* Add bold font */
 }
 
-/* Style image container*/
-.image-container {
-    position: relative;
-    display: inline-block;
-    border-radius: 50%; /* Make the container circle */
-    overflow: hidden;  /* Hide the overflow */
+#work-process .service-item img, /* Images Below */
+#services .service-item i,
+#blog-posts .case-study-item img{
+    order: 2;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
 }
 
-/* Position number, use oval style */
-.step-number {
-position: absolute;
+#work-process .service-item p, /* Paragraphs below */
+#services .service-item p,
+#blog-posts .case-study-item p {
+    order: 3;
+    color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#services .service-item:hover {
+    transform: translateY(-5px); /* Slide up slightly */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Add more shadow */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+#services .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center; /* center items */
+}
+
+#services .service-item {
+    display: grid;
+    grid-template-rows: auto auto 1fr; /*Distribute available space*/
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Services Section */
+#services {
+  padding: 60px 0;
+    background-color: #e9ecef;
+}
+
+#services h2 {
+  text-align: center;
+  margin-bottom: 40px;
+    color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* About Section */
+#about {
+  padding: 60px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#about:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#about h2 {
+  text-align: center;
+  margin-bottom: 20px;
+    color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#about p {
+    color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#about img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#about img:hover {
+    transform: scale(1.05);
+}
+
+/* Blog Posts Section */
+#blog-posts {
+    padding: 60px 0;
+}
+
+#blog-posts h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Reusing case-study grid for blog post layout */
+#blog-posts .case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+#blog-posts .case-study-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    grid-template-rows: auto auto 1fr; /* Ensure each item takes equal vertical space */
+}
+
+#blog-posts .case-study-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Paragraph/text for the blog*/
+#blog-posts .case-study-item p {
+        overflow: hidden; /* Hide any content */
+    text-overflow: ellipsis; /* add ... to the end of paragraphs */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+/* Hover effects for the entire card*/
+#blog-posts .case-study-item:hover {
+      transform: scale(1.02); /* Slight zoom on hover */
+    transition: transform 0.3s ease;
+}
+
+
+#blog-posts .case-study-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#blog-posts .case-study-item h3,
+#blog-posts .case-study-item p {
+    color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+#contact {
+    padding: 60px 0;
+    background-color: #f0f0f0;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 30px;
+    color: var(--body-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+      color: var(--body-text-color);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--font-family);
+    color: var(--body-text-color);
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer-nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Media Queries (Responsive Design) */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav ul {
+    margin-top: 10px;
+    flex-direction: column;
+  }
+
+  header nav ul li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  #hero h1 {
+    font-size: 2.5em;
+  }
+
+  .work-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #blog-posts .case-study-grid {
+      grid-template-columns: 1fr;
+  }
+}
