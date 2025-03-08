@@ -14,7 +14,7 @@ body, h1, h2, h3, p, ul, li, form, input, textarea, button, img {
   --primary-color: #007bff;
   --secondary-color: #28a745;
   --hero-text-color: #fff;  /*  White for Hero Section Text */
-  --body-text-color: #555; /*  Grey for General Body Text */
+  --body-text-color: #555555; /*  Grey for General Body Text */
   --background-color: #f8f9fa;
   --font-family: sans-serif;
 }
