@@ -1,13 +1,12 @@
 /* CSS Reset (Optional - but recommended) */
-/*  Normalize.css or a similar reset can be used for more thorough browser consistency */
-body, h1, h2, h3, p, ul, li, form, input, textarea, button {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  box-sizing: border-box; /* Important for predictable sizing */
+body, h1, h2, h3, p, ul, li, form, input, textarea, button, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
 }
 
 /* General Styles */
@@ -35,9 +34,11 @@ body {
 a {
   color: var(--primary-color);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
+  color: var(--secondary-color);
   text-decoration: underline;
 }
 
@@ -62,9 +63,9 @@ header {
   background-color: white;
   padding: 20px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: sticky; /* Stick to the top on scroll */
+  position: sticky;
   top: 0;
-  z-index: 100; /* Ensure it stays on top of other content */
+  z-index: 100;
 }
 
 header .container {
@@ -78,6 +79,12 @@ header .logo {
   font-weight: bold;
 }
 
+header .logo img {
+    height: 50px; /* Adjust the logo height as needed */
+    vertical-align: middle; /* Align the image vertically */
+    margin-right: 10px; /* Add some spacing between the logo and text, if any */
+}
+
 header nav ul {
   list-style: none;
   display: flex;
@@ -89,9 +96,35 @@ header nav ul li {
 
 /* Hero Section */
 #hero {
-  background-color: var(--background-color);
-  padding: 80px 0;
-  text-align: center;
+    background-color: var(--background-color);
+    padding: 100px 0;
+    overflow: hidden; /*  To contain floated elements or absolutely positioned elements */
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-image {
+    width: 50%; /* Adjust as needed */
+    text-align: center; /* Center the image */
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+    width: 50%; /* Adjust as needed */
+    text-align: left;
 }
 
 #hero h1 {
@@ -121,6 +154,12 @@ header nav ul li {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .service-item i {
@@ -137,6 +176,11 @@ header nav ul li {
 #about h2 {
   text-align: center;
   margin-bottom: 20px;
+}
+
+#about img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Contact Section */
@@ -181,6 +225,28 @@ footer {
   padding: 20px 0;
 }
 
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer-nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
 /* Media Queries (Responsive Design) */
 @media (max-width: 768px) {
   header .container {
@@ -197,6 +263,16 @@ footer {
     margin-left: 0;
     margin-bottom: 10px;
   }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image, .hero-content {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
   #hero h1 {
     font-size: 2.5em;
